@@ -9,8 +9,8 @@
     --BLACK: #000;
     --WHITE: hsla(0, 0%, 100%, 0.684);
     --BORDER-BG: linear-gradient(to right, hsla(187, 68%, 31%, 0.945), hsla(244, 69%, 29%, 0.966));
-    --HOVER-LINK: hsla(0, 0%, 99%, 0.979);
     --PADDING-BTN: 0.7rem 1.6rem;
+    --TRANSFORM-LINK: scale(120%, 110%);
 }
 
 html{
@@ -46,16 +46,16 @@ nav ul{
     display: flex;
     flex-wrap: wrap;
     gap: 1.7rem;
-    border-radius: 5px;
     padding-block-end: 0.5rem;
 }
 nav a, nav a:visited{    
     color: var(--WHITE);
     text-decoration: none;
 }
-nav a:hover, nav a:focus{
-    color: var(--HOVER-LINK);
-}    
+nav a:hover, nav li:hover{
+    color: #000;
+    transform: var(--TRANSFORM-LINK);
+}
 main{
     flex-grow: 1;
     display: flex;
@@ -99,7 +99,7 @@ img{
     text-decoration: none;
 }
 .intro a:hover, .intro a:focus{
-    color: var(--HOVER-LINK);
+    transform: var(--TRANSFORM-LINK);
 }
 .get-started-btn{
     background-color: hsla(246, 85%, 31%, 0.836);
@@ -280,8 +280,7 @@ img{
     border: 2px solid;
 }
 .price a:hover, .price a:focus{
-    --HOVER-LINK: hsl(240, 30%, 8%);
-    background-color: var(--HOVER-LINK) ;
+    transform: var(--TRANSFORM-LINK);
 }
 .testimonials{
     background-image: radial-gradient(circle, hsla(60, 56%, 34%, 0.822), rgba(206, 119, 133, 0.925), rgba(58, 177, 94, 0.918));
@@ -410,5 +409,127 @@ footer div a{
     to{
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width:576px){
+    nav ul{
+        gap: 2rem;
+    }
+    .intro h1{
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+    .intro p{
+        padding-inline: 0.8rem;
+    }
+    .intro img{
+        margin-inline: auto;
+        width: min(100%, 700px);
+    }
+    section{
+        width: min(100%, 950px);
+    }
+    .card{
+        width: min(100% - 1rem, 700px);
+        margin-inline: auto;
+    }
+    .card img{
+        width: min(100% - 2rem, 700px - 2rem);
+        height: auto;
+    }
+    .features{
+        display: grid;
+        grid-template-areas:
+        "h2 h2"
+        "first first"
+        "second fifth"
+        "third fourth"
+        "third fourth"
+        "sixth sixth" ;
+        align-items: stretch;
+    }
+    .features h2{
+        grid-area: h2;
+        margin-inline: auto;
+    }
+    .first-card{
+        grid-area: first;
+    }
+    .second-card{
+        grid-area: second;
+    }
+    .third-card{
+        grid-area: third;
+    }
+    .fourth-card{
+        grid-area: fourth;
+    }
+    .fifth-card{
+        grid-area: fifth;
+    }
+    .sixth-card{
+        grid-area: sixth;
+    }
+    .second-card li, .third-card li, .fourth-card li, .fifth-card li{
+        line-height: 2.5rem;
+    }
+    .working h2{
+        font-size: 3rem;
+    }
+    .steps{
+        display: grid;
+        grid-template-areas: 
+        "one two"
+        "three four"
+        "five five";
+    }
+    .step:nth-child(1){
+        grid-area: one;
+    }
+    .step:nth-child(2){
+        grid-area: two;
+    }
+    .step:nth-child(3){
+        grid-area: three;
+    }
+    .step:nth-child(4){
+        grid-area: four;
+    }
+    .step:nth-child(5){
+        grid-area: five;
+        padding: 1.2rem;
+        margin-inline: auto;
+    }
+    .step{
+        border-radius: 30px;
+        border: 1px solid black;
+        padding:0.5rem 0.2rem;
+        margin: 0.4rem 0.5rem;
+    }
+    .step{
+        width: min(100% - 1rem, 700px);
+        margin-inline: auto;
+    }
+    .working img{
+        width: min(100% - 2rem, 700px);
+        height: auto;
+        margin-block: 2rem;
+        border-radius: 30px;
+    }
+    .price{
+        width: min(100% - 2rem, 700px - 2rem);
+        margin-block: 0.5rem;
+    }
+    .price ul, .price h3{
+        opacity: 0;
+        transform: translateY(1.25rem);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .price:hover ul, .price:focus-within ul, .price:hover h3, .price:focus-within h3{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
