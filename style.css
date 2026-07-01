@@ -23,12 +23,10 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5rem;
 }
-header, footer{
+header{
     position: sticky;
     text-align: center;
     color: var(--WHITE);
-}
-header{
     top: 0;
     z-index: 100;
     background-image: linear-gradient(hsla(330, 82%, 39%, 0.849), hsla(268, 78%, 40%, 0.938));
@@ -355,9 +353,9 @@ img{
     color: #000;
 }
 footer{
-    bottom: 0;
     background-image: linear-gradient(hsla(240, 32%, 43%, 0.842), hsla(350, 33%, 59%, 0.842));
     font-size: 1.6rem;
+    text-align: center;
 }
 footer p{
     color: #000;
@@ -386,10 +384,10 @@ footer div a{
     white-space: nowrap;
 }
 .card:nth-child(even){
-    animation: slide-left 4s ease-in-out 1s 1 normal none;
+    animation: slide-left 4s ease-in-out 1s 1 normal forwards;
 }
 .card:nth-child(odd){
-    animation: slide-right 5s ease-in-out 1s 1 normal none;
+    animation: slide-right 5s ease-in-out 1s 1 normal forwards;
 }
 @keyframes slide-left {
     from{
@@ -427,7 +425,11 @@ footer div a{
     }
     .intro img{
         margin-inline: auto;
-        width: min(100%, 700px);
+        width: min(100% - 0.5rem, 700px - 0.5rem);
+    }
+    .intro a{
+        margin-block: 2rem 1.5rem;
+        margin-inline: 2.5rem;
     }
     section{
         width: min(100%, 950px);
@@ -476,15 +478,65 @@ footer div a{
     .second-card li, .third-card li, .fourth-card li, .fifth-card li{
         line-height: 2.5rem;
     }
+    .sixth-card img{
+        height: 100%;
+        max-height: 600px;
+    }
     .working h2{
         font-size: 3rem;
     }
+    .working img{
+        width: min(100% - 2rem, 700px);
+        height: auto;
+        margin-block: 2rem;
+        border-radius: 30px;
+    }
+    .price{
+        width: min(100% - 2rem, 700px - 2rem);
+        margin-block: 0.5rem;
+    }
+    .price ul{
+        opacity: 0;
+        transform: translateY(1.25rem);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .price:hover ul, .price:focus-within ul{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .form h2{
+        font-size: 2.5rem;
+        margin-block-start: 1rem;
+    }
+    .form legend{
+        font-size: 2rem;
+    }
+    .form input, .form select{
+        width: 100%;
+        max-width: 15rem;   
+        height: 2.5rem;   
+    }
+    .form button{
+        margin-inline: min(33%, 3rem);
+    }
+}
+
+@media screen and (min-width:700px) {
+    section{
+        scroll-margin-top: 6.5rem;
+    }
+    .intro h1{
+        font-size: 2.4rem;
+    }
+    .intro p{
+        font-size: 1.8rem;
+    }
     .steps{
-        display: grid;
-        grid-template-areas: 
-        "one two"
-        "three four"
-        "five five";
+    display: grid;
+    grid-template-areas: 
+    "one two"
+    "three four"
+    "five five";
     }
     .step:nth-child(1){
         grid-area: one;
@@ -513,23 +565,56 @@ footer div a{
         width: min(100% - 1rem, 700px);
         margin-inline: auto;
     }
-    .working img{
-        width: min(100% - 2rem, 700px);
-        height: auto;
-        margin-block: 2rem;
-        border-radius: 30px;
+    .subscription{
+        display: grid;
+        grid-template-areas:
+        "h2 h2"
+        "free pro"
+        "max max";
+        align-items: stretch;
+    }
+    .subscription h2{
+        grid-area: h2;
+        margin-inline: auto;
+    }    
+    .free-tier{
+        grid-area: free;
+    }
+    .pro-tier{
+        grid-area: pro;
+    }
+    .max-tier{
+        grid-area: max;
+        margin-inline: auto;
     }
     .price{
-        width: min(100% - 2rem, 700px - 2rem);
-        margin-block: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }    
+    .price a{
+        margin-top: auto;
     }
-    .price ul, .price h3{
-        opacity: 0;
-        transform: translateY(1.25rem);
-        transition: opacity 0.4s ease, transform 0.4s ease;
+    .testimonials{
+        display: grid;
+            grid-template-areas:
+            "h2 h2"
+            "review-three review-two"
+            "review-one review-one";
+            align-items: stretch;   
+            gap: 0.3rem;    
     }
-    .price:hover ul, .price:focus-within ul, .price:hover h3, .price:focus-within h3{
-        opacity: 1;
-        transform: translateY(0);
+    .testimonials h2{
+        grid-area: h2;
+        margin-inline: auto;
     }
-}
+    .first-review{
+        grid-area: review-one;
+    }
+    .second-review{
+        grid-area: review-two;
+    }
+    .third-review{
+        grid-area: review-three;
+        margin-inline: auto;
+    }
+}    
