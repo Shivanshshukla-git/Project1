@@ -25,6 +25,7 @@ This is my first major landing page since I started learning.
 - Organizing a larger CSS project
 
 ## Live Link
-
+[View Live](https://deepwork-productivity.netlify.app/)
 
 ## Preview
+![DeepWork Preview](Image/Screenshot 2026-07-02 224223.png)
