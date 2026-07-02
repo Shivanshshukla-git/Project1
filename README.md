@@ -28,4 +28,4 @@ This is my first major landing page since I started learning.
 [View Live](https://deepwork-productivity.netlify.app/)
 
 ## Preview
-![DeepWork Preview](Image/Screenshot 2026-07-02 224223.png)
+![DeepWork Preview](Image/DeepWork-screenshot.png)
