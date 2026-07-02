@@ -1,7 +1,7 @@
 # DEEPWORK - A PRODUCTIVITY LANDING PAGE
 A fictional productivity app landing page build with HTML5 and CSS3.
 
-## ABOUT
+## About
 This is my first major landing page since I started learning.
 
 ## Features
@@ -24,7 +24,7 @@ This is my first major landing page since I started learning.
 - Adding smooth animations and transitions
 - Organizing a larger CSS project
 
-## LIVE LINK
+## Live Link
 
 
-## PREVIEW
+## Preview
