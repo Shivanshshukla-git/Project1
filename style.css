@@ -51,7 +51,10 @@ nav a, nav a:visited{
     color: var(--WHITE);
     text-decoration: none;
 }
-nav a:hover, nav li:hover{
+nav ul a {
+    display: inline-block;
+}
+nav a:hover, nav ul a:hover{
     color: var(--BLACK);
     transform: var(--TRANSFORM-LINK);
 }
